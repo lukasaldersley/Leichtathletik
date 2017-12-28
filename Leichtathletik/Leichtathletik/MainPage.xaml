@@ -4,8 +4,26 @@
              xmlns:local="clr-namespace:Leichtathletik"
              x:Class="Leichtathletik.MainPage">
 
-	<Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <Grid x:Name="mainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!--Überschrift-->
+            <RowDefinition Height="*"/>
+            <!--Alles andere-->
+            <RowDefinition Height="Auto"/>
+            <!--Statuszeile-->
+        </Grid.RowDefinitions>
+
+        <TextCell x:Name="Ueberschrift" FontStyle="Italic" FontSize="20" Text="Leichtathlethik" Grid.Row="0" IsReadOnly="True" IsHitTestVisible="False" />
+        <StackLayout Grid.Row="1" x:Name="MainPageStackPanel">
+            <Picker x:Name="SchulartComboBox"/>
+            <Picker x:Name="JahrgangsstufenComboBox" Visibility="Collapsed"/>
+            <Picker x:Name="GeschlechtComboBox" Visibility="Collapsed"/>
+            <Picker x:Name="SportartComboBox" Visibility="Collapsed"/>
+            <Button x:Name="WeiterButton" Content="WEITER" Visibility="Collapsed"/>
+            <Button Content="WTF" Click="NBTest_Click" Visibility="Collapsed"/>
+        </StackLayout>
+        <TextCell x:Name="StatusAusgabe" Visibility="Collapsed" Grid.Row="2"/>
+    </Grid>
 
 </ContentPage>
