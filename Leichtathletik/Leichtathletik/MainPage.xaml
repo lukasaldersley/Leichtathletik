@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:Leichtathletik"
              x:Class="Leichtathletik.MainPage">
 
-    <Grid x:Name="mainGrid">
+    <Grid x:Name="mainGrid" BackgroundColor="LightGoldenrodYellow">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <!--Überschrift-->
@@ -14,16 +14,16 @@
             <!--Statuszeile-->
         </Grid.RowDefinitions>
 
-        <TextCell x:Name="Ueberschrift" FontStyle="Italic" FontSize="20" Text="Leichtathlethik" Grid.Row="0" IsReadOnly="True" IsHitTestVisible="False" />
+        <Label x:Name="Ueberschrift" Font="Italic" FontSize="20" Text="Leichtathlethik" Grid.Row="0"/>
         <StackLayout Grid.Row="1" x:Name="MainPageStackPanel">
             <Picker x:Name="SchulartComboBox"/>
-            <Picker x:Name="JahrgangsstufenComboBox" Visibility="Collapsed"/>
-            <Picker x:Name="GeschlechtComboBox" Visibility="Collapsed"/>
-            <Picker x:Name="SportartComboBox" Visibility="Collapsed"/>
-            <Button x:Name="WeiterButton" Content="WEITER" Visibility="Collapsed"/>
-            <Button Content="WTF" Click="NBTest_Click" Visibility="Collapsed"/>
+            <Picker x:Name="JahrgangsstufenComboBox" IsVisible="False"/>
+            <Picker x:Name="GeschlechtComboBox" IsVisible="False"/>
+            <Picker x:Name="SportartComboBox" IsVisible="False"/>
+            <Button x:Name="WeiterButton" Text="WEITER" IsVisible="False"/>
+            <Button x:Name="NB_Test" Clicked="NB_Test_Clicked" Text="WTF" IsVisible="False"/>
         </StackLayout>
-        <TextCell x:Name="StatusAusgabe" Visibility="Collapsed" Grid.Row="2"/>
+        <Label x:Name="StatusAusgabe" IsVisible="False" Grid.Row="2"/>
     </Grid>
 
 </ContentPage>

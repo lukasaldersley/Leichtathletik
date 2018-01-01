@@ -13,5 +13,10 @@ namespace Leichtathletik
 		{
 			InitializeComponent();
 		}
-	}
+
+        private void NB_Test_Clicked(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
